@@ -11,7 +11,7 @@ function App() {
   //     : [],
   // );
   const initialValue = useSelector((state) => state.texts);
-// console.log(initialValue.texts)
+  // console.log(initialValue.texts)
   useEffect(() => {
     localStorage.setItem("texts", JSON.stringify(initialValue.texts));
   }, [initialValue.texts]);
