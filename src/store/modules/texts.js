@@ -1,5 +1,5 @@
 const initiaState = {
-  texts: [],
+  texts: localStorage.getItem("texts") || [],
 };
 
 const texts = (state = initiaState, action) => {
