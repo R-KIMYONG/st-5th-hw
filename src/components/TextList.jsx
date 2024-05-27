@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
 
 export default function TextList() {
-  const initialValue = useSelector((state) => state.texts.texts);
-  console.log(initialValue)
+  const initialValue = useSelector((state) => state.texts);
+  console.log(initialValue.texts)
   return (
     <ul>
-      {initialValue.map((text, index) => (
+      {initialValue.texts.map((text, index) => (
         <li key={index}>{text}</li>
       ))}
     </ul>
