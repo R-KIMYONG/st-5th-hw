@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { onAddText } from "../store/config/configStore";
 
 function TextInput() {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState("");
-
   const handleChange = (e) => {
     setInputValue(e.target.value);
   };
@@ -12,7 +12,7 @@ function TextInput() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputValue.trim()) {
-      dispatch({ type: "onAddText", action: inputValue });
+      dispatch(onAddText(inputValue));
       setInputValue("");
     }
   };
