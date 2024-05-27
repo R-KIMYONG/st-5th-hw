@@ -1,4 +1,5 @@
-import TextContextProvider from "./components/TextContextProvider";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import TextInput from "./components/TextInput";
 import TextList from "./components/TextList";
 
@@ -9,10 +10,11 @@ function App() {
   //     ? JSON.parse(localStorage.getItem("texts"))
   //     : [],
   // );
-
-  // useEffect(() => {
-  //   localStorage.setItem("texts", JSON.stringify(texts));
-  // }, [texts]);
+  const initialValue = useSelector((state) => state.texts);
+// console.log(initialValue.texts)
+  useEffect(() => {
+    localStorage.setItem("texts", JSON.stringify(initialValue.texts));
+  }, [initialValue.texts]);
 
   // const onAddText = (text) => {
   //   setTexts((prevTexts) => [...prevTexts, text]);
@@ -21,10 +23,8 @@ function App() {
   return (
     <div>
       <h1>Text Input and Listing</h1>
-      <TextContextProvider>
-        <TextInput />
-        <TextList />
-      </TextContextProvider>
+      <TextInput />
+      <TextList />
     </div>
   );
 }
