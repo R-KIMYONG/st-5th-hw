@@ -1,27 +1,27 @@
-import React, { createContext, useState, useEffect } from "react";
+// import React, { createContext, useState, useEffect } from "react";
 
-export const TextContext = createContext(null);
+// export const TextContext = createContext(null);
 
-const TextContextProvider = ({ children }) => {
-  const [texts, setTexts] = useState(() =>
-    localStorage.getItem("texts")
-      ? JSON.parse(localStorage.getItem("texts"))
-      : []
-  );
+// const TextContextProvider = ({ children }) => {
+//   const [texts, setTexts] = useState(() =>
+//     localStorage.getItem("texts")
+//       ? JSON.parse(localStorage.getItem("texts"))
+//       : []
+//   );
 
-  useEffect(() => {
-    localStorage.setItem("texts", JSON.stringify(texts));
-  }, [texts]);
+//   useEffect(() => {
+//     localStorage.setItem("texts", JSON.stringify(texts));
+//   }, [texts]);
 
-  const onAddText = (text) => {
-    setTexts((prevTexts) => [...prevTexts, text]);
-  };
+//   const onAddText = (text) => {
+//     setTexts((prevTexts) => [...prevTexts, text]);
+//   };
 
-  return (
-    <TextContext.Provider value={{ texts, onAddText }}>
-      {children}
-    </TextContext.Provider>
-  );
-};
+//   return (
+//     <TextContext.Provider value={{ texts, onAddText }}>
+//       {children}
+//     </TextContext.Provider>
+//   );
+// };
 
-export default TextContextProvider;
+// export default TextContextProvider;

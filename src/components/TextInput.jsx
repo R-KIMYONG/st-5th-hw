@@ -12,7 +12,7 @@ function TextInput() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputValue.trim()) {
-      dispatch({ type: "onAddText", action: inputValue });
+      dispatch({ type: "onAddText", payload: inputValue });
       setInputValue("");
     }
   };

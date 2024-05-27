@@ -1,8 +1,8 @@
-const initiaState = {
+const initialState = {
   texts: localStorage.getItem("texts") || [],
 };
 
-const texts = (state = initiaState, action) => {
+const texts = (state = initialState, action) => {
   switch (action.type) {
     case "onAddText":
       return {
