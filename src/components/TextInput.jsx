@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { TextContext } from "./TextContextProvider";
 
-function TextInput({ onAddText }) {
+
+function TextInput() {
+  const { onAddText } = useContext(TextContext);
   const [inputValue, setInputValue] = useState("");
 
   const handleChange = (e) => {
@@ -16,6 +19,7 @@ function TextInput({ onAddText }) {
   };
 
   return (
+    
     <form onSubmit={handleSubmit}>
       <input
         type="text"
